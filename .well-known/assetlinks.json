@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.jb.daramigo",
+      "sha256_cert_fingerprints": [
+        "8A:31:9F:B7:F8:40:EC:89:C0:6B:6C:5B:0C:4F:88:F7:3D:67:92:0B:16:86:B0:F5:D4:70:46:73:35:BB:8B:7B"
+      ]
+    }
+  }
+]
