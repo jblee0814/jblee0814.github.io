@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["38BHU6WBY2.kr.co.rimitech.daramigo"],
+        "components": [
+          {
+            "/": "/morningcookie/daramigo/i/*",
+            "comment": "초대 링크 — 8자리 코드가 뒤에 붙는다"
+          }
+        ]
+      }
+    ]
+  }
+}
