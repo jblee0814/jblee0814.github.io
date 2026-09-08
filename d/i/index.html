@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>다라미고 초대</title>
+<meta name="description" content="다라미고에 초대받으셨습니다. 앱을 설치하고 초대 코드를 넣어 주세요." />
+<!--
+  초대 링크 착지 페이지 (account-social-spec.md §11.4).
+
+  🔴 앱이 설치돼 있으면 이 페이지는 열리지 않는다 — 안드로이드가 App Links 로
+     가로채 앱을 바로 연다. 여기까지 온 사람은 **앱이 없는 사람**이다.
+     그래서 이 페이지가 할 일은 하나뿐이다: 코드를 잃어버리지 않게 하는 것.
+
+  🔴 코드를 **경로가 아니라 쿼리(?c=)** 로 받는다. GitHub Pages 는 정적 파일만 주므로
+     `/i/AB12CD34` 같은 경로는 404 가 되고, 그것을 살리려면 저장소 전체가 공유하는
+     404.html 을 건드려야 한다(모닝쿠키·몽글캠이 같은 저장소에 있다).
+     옛 경로 형식도 아래에서 함께 읽는다 — 이미 보낸 문자가 있을 수 있다.
+
+  🔴 이 파일은 **`jblee0814.github.io` 저장소 뿌리의 `/d/i/`** 에 둔다
+     (`morningcookie` 가 아니다). 경로를 짧게 만든 이유는 문자 요금이다 —
+     옛 경로로는 초대 문구가 106바이트라 SMS 1건 한도(90)를 넘어 LMS 가 됐다.
+     `/i/` 를 그냥 쓰지 않은 것은 이 도메인을 앱들이 함께 쓰기 때문이다.
+-->
+<style>body{background:#FBF8F4;color:#241A12;line-height:1.7;margin:0;
+font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}
+.wrap{max-width:480px;margin:0 auto;padding:48px 24px 64px}
+.logo{font-size:56px;text-align:center}.brand{text-align:center;font-size:28px;font-weight:800;margin-top:8px}
+.slogan{text-align:center;color:#6B5B4E;font-size:15px;margin-top:4px}
+.card{background:#fff;border:1px solid #E8E0D6;border-radius:16px;padding:20px;margin-top:24px}
+h2{font-size:18px;margin:0 0 8px}p{font-size:16px;color:#6B5B4E;margin:8px 0}
+.code{font-size:34px;font-weight:800;letter-spacing:.12em;text-align:center;
+background:#FFF6EE;border:2px solid #F08A24;border-radius:14px;padding:18px 12px;margin:12px 0;
+user-select:all;-webkit-user-select:all}
+.btn{display:block;background:#2FA86A;color:#fff;text-align:center;font-size:18px;font-weight:800;
+text-decoration:none;border-radius:14px;padding:16px;margin-top:16px}
+.ghost{display:block;text-align:center;color:#B55912;font-size:15px;margin-top:12px;text-decoration:none}
+ol{padding-left:20px;color:#6B5B4E;font-size:15px}li{margin:6px 0}</style></head>
+<body><div class="wrap">
+<div class="logo">🐿️</div><div class="brand">다라미고</div>
+<div class="slogan">친구가 초대했습니다</div>
+
+<div class="card">
+  <h2>초대 코드</h2>
+  <div class="code" id="code">— — — —</div>
+  <p id="hint">아래 순서대로 하시면 친구가 됩니다.</p>
+  <ol>
+    <li>앱을 설치합니다.</li>
+    <li>앱을 열고 아래쪽 <b>친구</b>를 누릅니다.</li>
+    <li><b>초대 코드로 친구 맺기</b>를 누릅니다.</li>
+    <li>위 8자리를 넣습니다.</li>
+  </ol>
+  <a class="btn" id="store" href="https://play.google.com/store/apps/details?id=com.jb.daramigo">앱 설치하기</a>
+  <a class="ghost" href="../">다라미고가 무엇인가요? ›</a>
+  <p id="ios-note" style="display:none;font-size:15px">
+    🍎 아이폰은 앱을 설치한 뒤 <b>위 8자리를 직접 넣어</b> 주세요.
+  </p>
+</div>
+</div>
+
+<script>
+// 쿼리(?c=) 를 먼저 보고, 없으면 옛 경로 형식(/i/CODE)에서 읽는다.
+// 🔴 형식 검사를 여기서도 한다 — 누구나 이 주소로 아무 문자열을 붙여 보낼 수 있고,
+//    검증 없이 그리면 이 페이지가 남의 문구를 띄우는 자리가 된다.
+(function () {
+  var PLAY = 'https://play.google.com/store/apps/details?id=com.jb.daramigo';
+  var APPSTORE = 'https://apps.apple.com/kr/app/id6800975245';
+
+  var VALID = /^[0-9A-HJKMNP-TV-Z]{8}$/;
+  var q = new URLSearchParams(location.search).get('c');
+  if (!q) {
+    var parts = location.pathname.replace(/\/+$/, '').split('/');
+    q = parts[parts.length - 1];
+  }
+  var code = (q || '').trim().toUpperCase();
+  var el = document.getElementById('code');
+  var ok = VALID.test(code);
+
+  if (ok) {
+    el.textContent = code;
+    document.title = '다라미고 초대 — ' + code;
+  } else {
+    el.textContent = '코드 없음';
+    document.getElementById('hint').textContent =
+      '초대 코드를 읽지 못했습니다. 초대 문자의 주소를 다시 눌러 주세요.';
+  }
+
+  // 🔴 **여기가 안드로이드 디퍼드 딥링크의 전부다.** Play 가 이 `referrer` 를
+  //    설치된 앱에 그대로 넘겨주고, 앱이 InstallReferrerReader 로 회수해
+  //    자동으로 친구가 된다. 이 한 줄이 없으면 앱은 회수할 것이 없어
+  //    사용자가 위 8자리를 손으로 넣어야 한다.
+  //    Firebase Dynamic Links 가 2025-08 에 종료돼 이것 말고 수단이 없다.
+  //
+  // 🔴 UTM 과 `invite` 를 **같은 referrer 한 값** 안에 이어 붙인다. 둘로 나누거나
+  //    조각마다 인코딩하면 `&` 가 살아나지 않아 앱이 갈라 읽지 못하고 초대가 죽는다.
+  //    받는 쪽은 `parseInviteReferrer` (AOS/…/data/friend/InstallReferrerReader.kt).
+  // ⚪ 코드가 형식에 안 맞아도 설치 버튼은 살려 둔다 — `invite` 없이 보낸다.
+  //    앱을 깔고 싶은 사람을 막을 이유가 없다.
+  var ref = 'utm_source=invite&utm_medium=app&utm_campaign=growth_a';
+  if (ok) ref += '&invite=' + code;
+  var playUrl = PLAY + '&referrer=' + encodeURIComponent(ref);
+
+  // 아이패드는 iOS 13+ 에서 데스크톱 사파리로 위장한다 — 터치 지원으로 함께 잡는다
+  var ua = navigator.userAgent || '';
+  var isApple = /iPhone|iPad|iPod/.test(ua) ||
+                (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+
+  var store = document.getElementById('store');
+  if (isApple) {
+    // ⚪ 아이폰에는 초대 코드 자동 회수 수단이 없다. 그래서 위 8자리를 손으로
+    //    넣으라는 안내를 여기서만 띄운다 (안드로이드에는 필요 없는 말이다).
+    store.href = APPSTORE;
+    if (ok) document.getElementById('ios-note').style.display = 'block';
+  } else {
+    store.href = playUrl;
+  }
+})();
+</script>
+</body></html>

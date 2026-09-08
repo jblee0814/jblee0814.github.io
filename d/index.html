@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>다라미고 — 매일 3분 두뇌 훈련</title>
+<meta name="description" content="초성 퀴즈 · 속담 · 기억력까지 열아홉 가지. 하루 3분이면 끝나는 두뇌 훈련 앱." />
+<meta property="og:title" content="다라미고 — 매일 3분 두뇌 훈련" />
+<meta property="og:description" content="초성 퀴즈 · 속담 · 기억력까지 열아홉 가지. 하루 3분이면 끝납니다." />
+<meta property="og:image" content="https://jblee0814.github.io/d/shot-1.png" />
+<meta property="og:type" content="website" />
+<!--
+  공개 랜딩 (growth-link-spec.md §4-4). 바깥 채널이 전부 이 주소를 가리킨다.
+
+  🔴 이 파일은 `jblee0814.github.io` 저장소 뿌리의 `/d/` 에 둔다.
+     법적 페이지(`/morningcookie/daramigo/…`)는 **옮기지 않는다** — 양 스토어
+     콘솔이 그 주소를 가리키고 있어, 바꾸면 심사 항목을 건드리는 위험만 산다.
+
+  🔴 웹 분석 도구를 넣지 않는다. 방문자 추적을 붙이면 개인정보처리방침을 고쳐야
+     한다. 측정은 Play `referrer` 하나로 한다 (아래 STORE 절).
+
+  🔴 효능을 말하지 않는다 — 「치매 예방」·「인지 개선」·「뇌가 좋아진다」 전부 금지.
+     이 페이지도 광고법 적용을 받는다 (PRD.md §2).
+-->
+<style>
+:root{--bg:#FBF8F4;--ink:#241A12;--ink2:#6B5B4E;--line:#E8E0D6;--card:#fff;
+      --accent:#B55912;--green:#22A45D;--orange:#F08A24}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);line-height:1.7;
+     font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+     -webkit-font-smoothing:antialiased;
+     word-break:keep-all;overflow-wrap:break-word}
+.wrap{max-width:520px;margin:0 auto;padding:40px 20px 56px}
+.logo{font-size:64px;text-align:center;line-height:1}
+h1{text-align:center;font-size:32px;font-weight:800;margin-top:10px;letter-spacing:-.02em}
+.slogan{text-align:center;color:var(--ink2);font-size:18px;margin-top:6px}
+.lead{background:var(--card);border:1px solid var(--line);border-radius:16px;
+      padding:16px 20px;margin-top:22px;font-size:18px;text-align:center}
+.shots{display:flex;gap:10px;margin-top:22px;overflow-x:auto;padding-bottom:6px;
+       scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.shots img{height:360px;width:auto;flex:0 0 auto;border-radius:14px;
+           border:1px solid var(--line);scroll-snap-align:center;background:var(--card)}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:800;
+     border-radius:16px;margin-top:14px}
+.btn.big{background:var(--green);color:#fff;font-size:20px;padding:18px}
+.btn.small{background:var(--card);color:var(--accent);font-size:17px;padding:14px;
+           border:1px solid var(--line)}
+.free{text-align:center;color:var(--ink2);font-size:15px;margin-top:12px}
+.list{background:var(--card);border:1px solid var(--line);border-radius:16px;
+      padding:18px 20px;margin-top:26px}
+.list h2{font-size:19px;font-weight:800;margin-bottom:8px}
+.list p{font-size:17px;color:var(--ink2);margin:6px 0}
+footer{margin-top:34px;text-align:center;border-top:1px solid var(--line);padding-top:18px}
+footer a{color:var(--ink2);font-size:15px;text-decoration:none;margin:0 8px;
+         display:inline-block;padding:6px 0}
+</style></head>
+<body><div class="wrap">
+
+<div class="logo">🐿️</div>
+<h1>다라미고</h1>
+<div class="slogan">매일 3분, 가볍게 머리를 씁니다</div>
+
+<div class="lead">
+  초성 퀴즈 · 속담 · 기억력까지 <b>열아홉&nbsp;가지</b>.<br />
+  다람쥐 다라미와 숲길을 걸으며 풉니다.
+</div>
+
+<div class="shots">
+  <img src="shot-1.png" alt="숲길 모양의 코스 화면. 오늘 풀 스테이지가 표시돼 있습니다" />
+  <img src="shot-2.png" alt="단어 기억 문제 화면. 낱말 네 개가 큰 글씨로 보입니다" />
+  <img src="shot-3.png" alt="장보기 계산 문제 화면. 물건값을 더해 답을 고릅니다" />
+</div>
+
+<a class="btn big" id="primary" href="#">앱 설치하기</a>
+<a class="btn small" id="secondary" href="#">다른 기기에서 받기</a>
+<p class="free">무료로 시작합니다 · 큰 글씨 · 인터넷 없이도 풀려요</p>
+
+<div class="list">
+  <h2>이런 분들을 위해 만들었습니다</h2>
+  <p>· 머리 쓰는 습관을 만들고 싶은데 어려운 건 싫은 분</p>
+  <p>· 작은 글씨와 복잡한 화면이 불편한 분</p>
+  <p>· 매일 조금씩, 꾸준히 할 무언가를 찾는 분</p>
+</div>
+
+<footer>
+  <a href="../morningcookie/daramigo/privacy.html">개인정보처리방침</a>
+  <a href="../morningcookie/daramigo/terms.html">이용약관</a>
+  <a href="../morningcookie/daramigo/support.html">문의하기</a>
+</footer>
+
+</div>
+
+<script>
+// 🔴 출처 코드(?f=)를 UTM 으로 펼치는 표는 **여기와 /d/i/ 두 곳에 같은 모양**으로 있다
+//    (growth-link-spec.md §3). 코드를 늘릴 때 두 곳을 함께 고친다.
+//    표에 없는 값은 **없는 것으로 친다** — 아무 문자열이나 붙여 보낼 수 있는 주소다.
+(function () {
+  var PLAY = 'https://play.google.com/store/apps/details?id=com.jb.daramigo';
+  var APPSTORE = 'https://apps.apple.com/kr/app/id6800975245';
+
+  var SOURCES = {
+    c: ['share_card', 'app'],      // 앱 안에서 사람이 보냈다 (공유 카드 · 부모님께 보내기)
+    y: ['youtube', 'social'],
+    b: ['naver_blog', 'blog'],
+    p: ['worksheet', 'offline'],   // 인쇄 학습지 QR
+    i: ['invite', 'app']
+  };
+
+  function playUrl() {
+    var f = new URLSearchParams(location.search).get('f');
+    var s = SOURCES[f];
+    if (!s) return PLAY;
+    // 🔴 referrer 값 **전체를 한 번** 인코딩한다. 조각마다 인코딩하면 Play 가
+    //    되돌려 준 값에서 `&` 가 살아나지 않아 앱이 갈라 읽지 못한다
+    var ref = 'utm_source=' + s[0] + '&utm_medium=' + s[1] + '&utm_campaign=growth_a';
+    return PLAY + '&referrer=' + encodeURIComponent(ref);
+  }
+
+  // 아이패드는 iOS 13+ 에서 데스크톱 사파리로 위장한다 — 터치 지원으로 함께 잡는다
+  var ua = navigator.userAgent || '';
+  var isApple = /iPhone|iPad|iPod/.test(ua) ||
+                (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  var isAndroid = /Android/.test(ua);
+
+  var primary = document.getElementById('primary');
+  var secondary = document.getElementById('secondary');
+
+  if (isApple) {
+    primary.href = APPSTORE; primary.textContent = '아이폰에 설치하기';
+    secondary.href = playUrl(); secondary.textContent = '안드로이드로 받기';
+  } else if (isAndroid) {
+    primary.href = playUrl(); primary.textContent = '안드로이드에 설치하기';
+    secondary.href = APPSTORE; secondary.textContent = '아이폰으로 받기';
+  } else {
+    // 판별하지 못했다. 🔴 둘 다 같은 크기로 둔다 — 한쪽을 작게 만들면
+    //    PC 로 보는 사람에게 틀린 쪽을 크게 권하게 된다
+    primary.href = playUrl(); primary.textContent = '안드로이드에 설치하기';
+    secondary.href = APPSTORE; secondary.textContent = '아이폰에 설치하기';
+    secondary.className = 'btn big';
+  }
+})();
+</script>
+</body></html>
